@@ -1,0 +1,79 @@
+<DOCTYPE! html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <link rel="icon" href="logo.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+      <title>JuanTrip Travel PH</title>
+   </head>
+   <body>
+    
+   <header>
+     <img src="logo.png" class="logo">
+     <div class="menu-btn"></div>
+     <div class="navigation">
+      <div class="navigation-items">
+      <a href="home">Home</a>
+      <a href="about">About</a>
+      <a href="explore">Explore</a>
+      <a href="gallery">Gallery</a>
+      <a href="contact">Contact</a>
+      </div>
+     </div>
+   </header>
+
+    <section class="home">
+      <video class="video-slide active" src="backgound.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <div class="content">   
+         <h1>JuanTrip<br><span>Travel PH.</span></h1>
+         <p>Discover excellence in travel with JuanTrip Travel PH . We offers a variety of travel experiences, such as adventurous trips, family vacations, business trips, and romantic getaways.</p>
+         <a href="#">Read More</a>
+      <div class="slider-navigation">
+         <div class="nav-btn"></div>
+         <div class="nav-btn"></div>
+         <div class="nav-btn"></div>
+         <div class="nav-btn"></div>
+         <div class="nav-btn"></div>
+      </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      //javascript of reponsive navigation menu
+      const menubtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menubtn.addEventListener("click",() =>{
+         menubtn.classList.toggle("active");
+         navigation.classList.toggle("active");
+      });   
+      //javascript for video slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+
+      var sliderNav = function(manual){
+         btns.forEach((btn) => {
+            btn.classList.remove("active");
+         });
+
+         slides.forEach((slide) => {
+            slide.classList.remove("active");
+         });
+
+         btns[manual].classList.add("active");
+         slides[manual].classList.add("active");
+      }
+
+      btns.forEach((btn, i) => {
+         btn.addEventListener("click", () => {
+            sliderNav(i)
+      });
+     });   
+    </script>
+   </body>
+</html>
